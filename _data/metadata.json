@@ -1,0 +1,21 @@
+{
+  "title": "jdan.dev",
+  "url": "https://jdan.dev/",
+  "language": "en",
+  "description": "Just trying to give back",
+  "feed": {
+    "subtitle": "Just trying to give back",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://jdan.dev/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://jdan.dev/feed/feed.json"
+  },
+  "author": {
+    "name": "Dan",
+    "email": "daniel.javorszky@gmail.com",
+    "url": "https://jdan.dev/about-me/"
+  }
+}
