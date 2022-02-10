@@ -95,6 +95,12 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   });
 
+  // ------- custom --------
+  const ext = require('./.eleventy.ext.js');
+  for (let shortcode of ext.shortcodes) {
+    eleventyConfig.addShortcode(shortcode.name, shortcode.func);
+  }
+
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid

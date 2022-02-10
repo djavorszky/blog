@@ -1,7 +1,7 @@
 ---
 title: Styling test
 description: Just testing the styling of bootstrap and what I cobbled together.
-date: 2022-02-10
+date: 2022-02-09
 layout: layouts/post.njk
 ---
 

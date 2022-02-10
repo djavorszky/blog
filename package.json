@@ -19,7 +19,6 @@
     "url": "https://jdan.dev/"
   },
   "license": "MIT",
-
   "homepage": "https://jdan.dev",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
@@ -28,6 +27,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
     "luxon": "^2.3.0",
     "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1"
+    "markdown-it-anchor": "^8.4.1",
+    "outdent": "^0.8.0"
   }
 }
