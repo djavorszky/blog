@@ -1,0 +1,48 @@
+:root {
+    --main-bg-color: #202124;
+    --main-text-color: rgba(255, 255, 255, 0.75);
+    --main-link-color: rgb(138, 180, 248);
+    --badge-link-color: #111;
+}
+
+body {
+    background-color: var(--main-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+nav a {
+    color: inherit;
+}
+
+a:not(.nav-link, .navbar-brand, .btn, .badge-link) {
+    color: var(--main-link-color) !important;
+    text-decoration: none !important;
+}
+
+.badge-link {
+    color: var(--badge-link-color) !important;
+    background-color: var(--main-link-color) !important;
+}
+
+.direct-link {
+    visibility: hidden;
+}
+
+h1:hover .direct-link,
+h2:hover .direct-link,
+h3:hover .direct-link,
+h4:hover .direct-link,
+h5:hover .direct-link,
+h6:hover .direct-link {
+    visibility:visible !important;
+}
+
+.page-width {
+    width: 100% !important;
+}
+
+@media (min-width: 768px) {
+    .page-width {
+        width: 50% !important;
+    }
+}

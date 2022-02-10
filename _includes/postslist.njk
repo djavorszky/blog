@@ -1,12 +1,36 @@
-<ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-{% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    {% for tag in post.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {% endfor %}
-  </li>
-{% endfor %}
-</ol>
+{% from "smart/util.njk" import tag %}
+
+<div class="row row-cols-1 g-4">
+  {% for post in postslist | reverse %}
+    <div class="card bg-dark">
+      {% if post.data.img %}
+        <img src="{{ post.data.img}}" class="card-img-top" alt="{{ post.data.imgAlt }}">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            <code>{{ post.url }}</code>
+          {% endif %}
+        </h5>
+        <div class="card-subtitle mb-2 text-muted">
+          <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          {% for tagName in post.data.tags | filterTagList %}
+            {{ tag(tagName) }}
+          {% endfor %}
+        </div>
+        {% if post.data.description %}
+          <div class="card-text">
+            {{ post.data.description }}
+          </div>
+        {% endif %}
+
+        <div class="mt-2">
+          <a href="{{ post.url | url }}" class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>

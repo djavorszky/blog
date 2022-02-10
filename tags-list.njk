@@ -2,9 +2,10 @@
 permalink: /tags/
 layout: layouts/home.njk
 ---
-<h1>Tags</h1>
+{% from "smart/util.njk" import tag %}
 
-{% for tag in collections.tagList %}
-  {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+<h1 class="my-3">Tags</h1>
+
+{% for tagName in collections.tagList %}
+  {{ tag(tagName) }}
 {% endfor %}

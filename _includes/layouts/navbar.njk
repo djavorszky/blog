@@ -1,5 +1,5 @@
-<header>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+<header class="bg-dark">
+    <nav class="mx-auto page-width navbar navbar-dark navbar-expand-sm">
         <div class="container-fluid">
             <a class="navbar-brand navbar-dark" href="{{ '/' | url }}">{{ metadata.title }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,8 +8,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     {%- for entry in collections.all | eleventyNavigation %}
-                        <li class="nav-item">
-                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" href="{{ entry.url | url }}">{{ entry.title }}</a>
+                        <li class="nav-item{% if entry.url == page.url %} active{% endif %}">
+                            <a class="nav-link" href="{{ entry.url | url }}">{{ entry.title }}</a>
                         </li>
                     {%- endfor %}
                 </ul>

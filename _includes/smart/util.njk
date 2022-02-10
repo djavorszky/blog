@@ -1,0 +1,6 @@
+{% macro tag(tagName) %}
+    {%- set tagUrl %}/tags/{{ tagName | slug }}/{% endset -%}
+    <a href="{{ tagUrl | url }}" class="badge badge-link rounded-pill ms-1 text-decoration-none">
+        {{ tagName }}
+    </a>
+{% endmacro %}
