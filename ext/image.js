@@ -1,7 +1,7 @@
 const outdent = require("outdent");
 const Image = require("@11ty/eleventy-img");
 
-function imageCaption(src, caption, alt, cls = "text-center", imgCls = "img-fluid rounded mx-auto d-block", sizes = "(min-width: 1024px) 100vw, 50vw") {
+function imageCaption(caption, src, alt, cls = "text-center", imgCls = "img-fluid rounded mx-auto d-block", sizes = "(min-width: 1024px) 100vw, 50vw") {
     return outdent`
     <div class="${cls}">
         <figure class="figure text-center">

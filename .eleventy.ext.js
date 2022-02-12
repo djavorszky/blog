@@ -13,7 +13,10 @@ const shortcodes = [
     {
         name: "image",
         func: generateImageSrc
-    },
+    }
+];
+
+const pairedShortcodes = [
     {
         name: "image_caption",
         func: imageCaption
@@ -33,5 +36,6 @@ function citationNeeded() {
 }
 
 module.exports = {
-    shortcodes
+    shortcodes,
+    pairedShortcodes
 }

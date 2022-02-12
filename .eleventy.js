@@ -98,9 +98,12 @@ module.exports = function (eleventyConfig) {
   });
 
   // ------- custom --------
-  const ext = require('./.eleventy.ext.js');
-  for (let shortcode of ext.shortcodes) {
-    eleventyConfig.addShortcode(shortcode.name, shortcode.func);
+  const { shortcodes, pairedShortcodes } = require('./.eleventy.ext.js');
+  for (let { name, func } of shortcodes) {
+    eleventyConfig.addShortcode(name, func);
+  }
+  for (let { name, func } of pairedShortcodes) {
+    eleventyConfig.addPairedShortcode(name, func);
   }
 
   return {
